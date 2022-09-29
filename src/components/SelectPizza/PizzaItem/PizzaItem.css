@@ -1,0 +1,28 @@
+.pizza-list-item{
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+    max-height: 150px;
+    background-color: aqua;
+    border: 1px solid purple;
+    margin: 10px;
+
+    overflow: scroll;
+}
+
+.pizza-img{
+    max-width: 90px;
+    object-fit: cover;
+}
+
+.pizza-descript{
+    font-size: 10px;
+}
+
+.pizza-name{
+    font-size: 15px;
+}
+
+.pizza-price{
+    font-size: 10px;
+}
