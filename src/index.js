@@ -56,6 +56,39 @@ const orderReducer = (state = defaultOrder, action) => {
         }
         console.log('This is updatedCustomer in SET Customer: ', updatedCustomer);
         return updatedCustomer;
+    } else if (action.type === 'ADD_PIZZA') {
+        let updatedOrder = {...state};
+        let updatedPizzas = updatedOrder.pizzas;
+        for (let i=0; i > updatedPizzas.length; i++) {
+            if (updatedPizzas[i].id === action.payload.pizzaId) {
+                updatedOrder.total += Number(action.payload.price);
+                updatedPizzas[i].quantity += 1;
+                updatedOrder.pizzas = updatedPizzas;
+            } else {
+                let addObj = {
+                    id: action.payload.pizzaId,
+                    quantity: action.payload.quantity
+                }
+                updatedOrder.pizzas.push(addObj);
+                updatedOrder.total += action.payload.price;
+            }
+            return updatedOrder;
+        }
+        return updatedOrder;
+    } else if (action.type === 'REMOVE_PIZZA') {
+        let updatedOrder = {...state};
+        let updatedPizzas = updatedOrder.pizzas;
+        for (let i=0; i > updatedPizzas.length; i++) {
+            if (updatedPizzas[i].quantity === 1 && updatedPizzas[i].id === action.payload.pizzaId) {
+                updatedOrder.total -= action.payload.price;
+                updatedPizzas.splice(i, 1);
+            } else if (updatedPizzas[i].quantity > 1 && updatedPizzas[i].id === action.payload.pizzaId) {
+                updatedPizzas[i].quantity -= 1;
+                updatedOrder.total -= action.payload.price;
+            }
+        }
+        updatedOrder.pizzas = updatedPizzas;
+        return updatedOrder;
     }
     return state;
 }
