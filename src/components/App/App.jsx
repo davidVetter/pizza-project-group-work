@@ -3,12 +3,18 @@ import axios from 'axios';
 import './App.css';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import Checkout from '../Checkout/Checkout';
+// import Checkout from '../Checkout/Checkout';
 import SelectPizza from '../SelectPizza/SelectPizza';
-import CustomerForm from '../CustomerForm/CustomerForm';
-import AdminOrder from '../AdminOrders/AdminOrder';
+// import CustomerForm from '../CustomerForm/CustomerForm';
+// import AdminOrder from '../AdminOrders/AdminOrder';
 
 function App() {
+
+  
+
+
+
+
 
   const dispatch = useDispatch();
 function test() {
@@ -33,9 +39,9 @@ useEffect(() => {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
       <SelectPizza />
-      <CustomerForm />
-      <Checkout />
-      <AdminOrders />
+      {/* <CustomerForm /> */}
+      {/* <Checkout /> */}
+      {/* <AdminOrders /> */}
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
   
