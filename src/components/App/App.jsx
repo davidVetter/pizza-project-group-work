@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 // import Checkout from '../Checkout/Checkout';
 import SelectPizza from '../SelectPizza/SelectPizza';
 // import CustomerForm from '../CustomerForm/CustomerForm';
+
 // import AdminOrder from '../AdminOrders/AdminOrder';
 
 function App() {
@@ -38,8 +39,10 @@ useEffect(() => {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
+
       <SelectPizza />
       {/* <CustomerForm /> */}
+
       {/* <Checkout /> */}
       {/* <AdminOrders /> */}
       <img src='images/pizza_photo.png' />
