@@ -61,7 +61,7 @@ function CustomerForm() {
                 checked={type === 'Pickup'}
                 onChange={(e) => setType(e.target.value)}  />
             Pickup</label>
-            <input value={type}/>
+            {/* <input value={type}/> */}
             <button type="submit">Submit</button>
         </form>
     )
