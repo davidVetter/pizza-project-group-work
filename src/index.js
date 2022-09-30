@@ -94,7 +94,8 @@ const orderReducer = (state = defaultOrder, action) => {
 
 const allOrdersReducer = (state = [], action) => {
     if(action.type === 'SET_ALL_ORDERS'){
-        return [action.payload];
+        console.log('setting state', action.payload);
+        return action.payload;
     }
     return state;
 }

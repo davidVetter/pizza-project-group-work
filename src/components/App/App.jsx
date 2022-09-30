@@ -33,6 +33,7 @@ function App() {
 
 
   return (
+
     <Router>
       <div className='App'>
         <Header />
@@ -59,6 +60,7 @@ function App() {
     
       </div>
     </Router>
+
   );
 }
 

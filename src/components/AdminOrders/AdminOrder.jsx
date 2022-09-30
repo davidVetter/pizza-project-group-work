@@ -1,10 +1,12 @@
 import axios from "axios";
+import { useEffect } from "react";
 import {useState} from 'react';
 
 import {useSelector} from 'react-redux';
 
 function AdminOrder(){
     const allOrders = useSelector(store => store.allOrders);
+    console.log('in adminOrder', allOrders);
 
     return (
         <div>
@@ -15,19 +17,16 @@ function AdminOrder(){
                 </thead>
                 <tbody>
                     {allOrders.map((order)=>{
+                        console.log(order);
                         return(
-                            <tr><td>order.name</td><td>TIME</td><td>order.type</td><td>order.total</td></tr>
+                            <tr key={order.id}><td>{order.customer_name}</td><td>TIME</td><td>{order.type}</td><td>{order.total}</td></tr>
                         )
                     })}
                     
                 </tbody>
             </table>
-
-
         </div>
     )
-
-
 }
 
 export default AdminOrder;
