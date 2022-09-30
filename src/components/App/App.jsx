@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-// import Checkout from '../Checkout/Checkout';
+import Checkout from '../Checkout/Checkout';
 import SelectPizza from '../SelectPizza/SelectPizza';
 import CustomerForm from '../CustomerForm/CustomerForm';
 
@@ -22,10 +22,12 @@ function test() {
   dispatch({
     type: 'SET_CUSTOMER_INFO',
     payload: {
-      customer_name: 'John',
-      street_address: '123 St W',
-      city: 'ANother CIty',
+      customer_name: '',
+      street_address: '',
+      city: '',
       type: 'Delivery',
+      zip: '',
+      pizzas: []
 
     }
   })
@@ -43,7 +45,7 @@ useEffect(() => {
       <SelectPizza />
       <CustomerForm />
 
-      {/* <Checkout /> */}
+      <Checkout />
       {/* <AdminOrders /> */}
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
