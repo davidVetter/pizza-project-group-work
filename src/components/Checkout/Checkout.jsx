@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useState } from 'react';
 import axios from "axios";
+import {useHistory} from 'react-router-dom';
 
 function Checkout({setAllOrders}) {
     const customer = useSelector(store => store.order);
@@ -8,6 +9,7 @@ function Checkout({setAllOrders}) {
     // const [zipState, setZipState] = useState('ND');
     const [pizzaName, setPizzaName] = useState('');
     const [pizzaCost, setPizzaCost] = useState(0);
+    const history = useHistory();
 
     function postOrder () {
         console.log('sending', customer);
@@ -18,6 +20,7 @@ function Checkout({setAllOrders}) {
         }).then((response)=>{
             console.log('POST Successful');
             setAllOrders();
+            history.push('/')
         }).catch(error => console.log('error with post', error));
         
 

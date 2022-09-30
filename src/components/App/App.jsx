@@ -49,7 +49,7 @@ function App() {
         
         
           <Route path='/checkout'>
-            <Checkout />
+            <Checkout setAllOrders={setAllOrders}/>
           </Route>
         
         
