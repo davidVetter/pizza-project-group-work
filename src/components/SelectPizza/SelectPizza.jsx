@@ -2,10 +2,12 @@ import axios from "axios";
 import {useDispatch, useSelector } from 'react-redux';
 import {useEffect, useState} from 'react';
 import PizzaItem from "./PizzaItem/PizzaItem";
+import {useHistory} from 'react-router-dom';
 
 function SelectPizza () {
     const dispatch = useDispatch();
     const menu = useSelector(store => store.menu);
+    const history = useHistory();
 
     // local state to hold current cart
     const [currentCart, setCurrentCart] = useState([]);
@@ -24,6 +26,10 @@ function SelectPizza () {
         getMenu()   
     }, []);
 
+    function movePage() {
+        history.push('/customerForm');
+    }
+
     return (
         <>  <div id="menu-holder">
                 <h1>IN select pizza</h1>
@@ -36,7 +42,7 @@ function SelectPizza () {
                             image_path={item.image_path}/>
                     )})}
                 </ul>
-                <button className='next-btn'>Next</button>
+                <button className='next-btn' onClick={() => movePage()}>Next</button>
             </div>
 
         </>
