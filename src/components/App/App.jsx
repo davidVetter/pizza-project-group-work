@@ -36,7 +36,7 @@ function App() {
       <SelectPizza />
       <CustomerForm />
 
-      {/* <Checkout /> */}
+      <Checkout />
       <AdminOrder />
   
     </div>

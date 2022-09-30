@@ -72,7 +72,6 @@ function Checkout() {
                 </thead>
                 <tbody>
                     {customer.pizzas.map((pizza, index) => 
-
                         <tr key={index}>
                             <td>{getPizzaName(pizza.id)}</td>
                             <td>{pizza.quantity}</td>
