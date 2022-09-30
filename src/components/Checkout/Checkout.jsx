@@ -1,12 +1,28 @@
 import { useSelector } from "react-redux";
 import { useState } from 'react';
+import axios from "axios";
 
-function Checkout() {
+function Checkout({setAllOrders}) {
     const customer = useSelector(store => store.order);
     const menu = useSelector(store => store.menu);
     // const [zipState, setZipState] = useState('ND');
     const [pizzaName, setPizzaName] = useState('');
     const [pizzaCost, setPizzaCost] = useState(0);
+
+    function postOrder () {
+        console.log('sending', customer);
+        axios({
+            method: 'POST',
+            url: '/api/order',
+            data: customer
+        }).then((response)=>{
+            console.log('POST Successful');
+            setAllOrders();
+        }).catch(error => console.log('error with post', error));
+        
+
+
+    }
 
     function getState() {
         let zipState = '';
@@ -79,6 +95,7 @@ function Checkout() {
                         </tr>)}
                 </tbody>
             </table>
+            <button onClick={()=>postOrder()}>Submit Order</button>
         </>
     )
 }
