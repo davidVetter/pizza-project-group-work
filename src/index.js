@@ -91,10 +91,18 @@ const orderReducer = (state = defaultOrder, action) => {
     return state;
 }
 
+const allOrdersReducer = (state = [], action) => {
+    if(action.type === 'SET_ALL_ORDERS'){
+        return [action.payload];
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
         menu: menuReducer,
-        order: orderReducer
+        order: orderReducer,
+        allOrders: allOrdersReducer
     }),
     applyMiddleware(logger)
 )

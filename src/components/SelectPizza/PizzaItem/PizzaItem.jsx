@@ -2,13 +2,11 @@ import {useState} from "react";
 import {useDispatch, useSelector } from 'react-redux';
 import "./PizzaItem.css"
 
-
 function PizzaItem({id, name, description, price, image_path}) {
     const dispatch = useDispatch();
 
     // track state of add btn for conditional render of btn (add/remove)
     const [isAdded, setIsAdded] = useState(false);
-
 
     function addToCart () {
         const quantity = 1;
@@ -31,7 +29,6 @@ function PizzaItem({id, name, description, price, image_path}) {
 
     }
 
-    
     return(
         <li className="pizza-list-item">
             <img className="pizza-img" src={image_path}/>

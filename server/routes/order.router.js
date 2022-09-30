@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
     // Find all orders and return them
     pool.query('SELECT * FROM "orders";').then((result) => {
         res.send(result.rows);
+        console.log('in GET *', result.rows);
     }).catch((error) => {
         console.log('Error GET /api/order', error);
         res.sendStatus(500);  
