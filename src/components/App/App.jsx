@@ -6,17 +6,16 @@ import { useEffect } from 'react';
 // import Checkout from '../Checkout/Checkout';
 import SelectPizza from '../SelectPizza/SelectPizza';
 import CustomerForm from '../CustomerForm/CustomerForm';
+import Header from '../Header/Header';
 
 // import AdminOrder from '../AdminOrders/AdminOrder';
 
 function App() {
-
   
 
   return (
     <div className='App'>
       <Header />
-
       <SelectPizza />
       <CustomerForm />
 
