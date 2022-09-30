@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 
 function CustomerForm() {
 
@@ -9,6 +10,7 @@ function CustomerForm() {
     const [zip, setZip] = useState('');
     const [type, setType] = useState('Delivery');
     const dispatch = useDispatch();
+    const history = useHistory();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -23,6 +25,8 @@ function CustomerForm() {
             }
         });
         e.target.reset();
+        history.push('/checkout')
+
     }
 
     return (
