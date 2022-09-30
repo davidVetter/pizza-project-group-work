@@ -34,13 +34,13 @@ router.post('/', async (req, res) => {
         RETURNING id;`, [customer_name, street_address, city, zip, type, total]);
         const orderId = orderInsertResults.rows[0].id;
 
-        await Promise.all(pizzas.map(pizza => {
-            const insertLineItemText = `INSERT INTO "line_item" ("order_id", "pizza_id", "quantity") VALUES ($1, $2, $3)`;
-            const insertLineItemValues = [orderId, pizza.id, pizza.quantity];
-            return client.query(insertLineItemText, insertLineItemValues);
-        }));
+        // await Promise.all(pizzas.map(pizza => {
+        //     const insertLineItemText = `INSERT INTO "line_item" ("order_id", "pizza_id", "quantity") VALUES ($1, $2, $3)`;
+        //     const insertLineItemValues = [orderId, pizza.id, pizza.quantity];
+        //     return client.query(insertLineItemText, insertLineItemValues);
+        // }));
 
-        await client.query('COMMIT')
+        // await client.query('COMMIT')
         res.sendStatus(201);
     } catch (error) {
         await client.query('ROLLBACK')
