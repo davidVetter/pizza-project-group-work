@@ -1,4 +1,4 @@
-import TotalCost from "../App/TotalCost/TotalCost";
+import TotalCost from "./TotalCost/TotalCost";
 
 
 function Header(){
