@@ -8,6 +8,8 @@ import SelectPizza from '../SelectPizza/SelectPizza';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import Header from '../Header/Header';
 import AdminOrder from '../AdminOrders/AdminOrder';
+import {HashRouter as Router, Route, NavLink, Switch} from "react-router-dom";
+
 
 // import AdminOrder from '../AdminOrders/AdminOrder';
 
@@ -31,15 +33,34 @@ function App() {
 
 
   return (
-    <div className='App'>
-      <Header />
-      <SelectPizza />
-      <CustomerForm />
 
-      <Checkout setAllOrders={setAllOrders}/>
-      <AdminOrder />
-  
-    </div>
+    <Router>
+      <div className='App'>
+        <Header />
+        <Switch>
+          <Route path='/' exact>
+            <SelectPizza />
+          </Route>
+        
+        
+          <Route path='/customerForm'>
+            <CustomerForm />
+          </Route>
+        
+        
+          <Route path='/checkout'>
+            <Checkout />
+          </Route>
+        
+        
+        <Route path='/admin'>
+          <AdminOrder />
+        </Route>
+        </Switch>
+    
+      </div>
+    </Router>
+
   );
 }
 
