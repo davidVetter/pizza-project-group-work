@@ -10,21 +10,21 @@ function PizzaItem({id, name, description, price, image_path}) {
     const [isAdded, setIsAdded] = useState(false);
 
 
-    function addToCart (pizzaId, price) {
+    function addToCart () {
         const quantity = 1;
         const action = {
             type: 'ADD_PIZZA',
-            payload: {pizzaId, quantity, price}
+            payload: {id, quantity, price}
         }
         console.log('dispatching ADD)_PIZZA', action);
         dispatch(action);
     }
 
-    function removeFromCart(pizzaId, price){
+    function removeFromCart(){
         const quantity = 1;
         const action = {
             type: 'REMOVE_PIZZA',
-            payload: {pizzaId, quantity, price}
+            payload: {id, quantity, price}
         }
         console.log('dispatching REMOVE_PIZZA', action);
         dispatch(action);
@@ -40,8 +40,8 @@ function PizzaItem({id, name, description, price, image_path}) {
                 <p className="pizza-descript">{description}</p>
                 <p className="pizza-price">{price}</p>
                 {isAdded 
-                    ? <button className="add-remove-btn" onClick={()=> {setIsAdded(false); removeFromCart({id, price})}}>Remove</button> 
-                    : <button  className="add-remove-btn" onClick={()=>{setIsAdded(true); addToCart({id, price})}}>Add</button>}
+                    ? <button className="add-remove-btn" onClick={()=> {setIsAdded(false); removeFromCart()}}>Remove</button> 
+                    : <button  className="add-remove-btn" onClick={()=>{setIsAdded(true); addToCart()}}>Add</button>}
             </div>
         </li>
     )

@@ -5,8 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 // import Checkout from '../Checkout/Checkout';
 import SelectPizza from '../SelectPizza/SelectPizza';
-// import CustomerForm from '../CustomerForm/CustomerForm';
-import Header from '../Header/Header';
+import CustomerForm from '../CustomerForm/CustomerForm';
 
 // import AdminOrder from '../AdminOrders/AdminOrder';
 
@@ -19,7 +18,7 @@ function App() {
       <Header />
 
       <SelectPizza />
-      {/* <CustomerForm /> */}
+      <CustomerForm />
 
       {/* <Checkout /> */}
       {/* <AdminOrders /> */}
