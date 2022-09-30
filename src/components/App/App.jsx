@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-// import Checkout from '../Checkout/Checkout';
+import Checkout from '../Checkout/Checkout';
 import SelectPizza from '../SelectPizza/SelectPizza';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import Header from '../Header/Header';
@@ -29,8 +29,6 @@ function App() {
 
   }
 
-
-  
 
   return (
     <div className='App'>
