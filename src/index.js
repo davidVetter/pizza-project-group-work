@@ -13,7 +13,7 @@ const defaultOrder = {
         zip: "",
         total: "",
         type: "",
-        pizzas: [{}]
+        pizzas: [{id: 0, quantity: 0}]
 };
 
 const menuReducer = (state = [], action) => {
@@ -69,6 +69,7 @@ const orderReducer = (state = defaultOrder, action) => {
                 }
                 updatedOrder.pizzas.push(addObj);
                 updatedOrder.total += Number(action.payload.price);
+                return updatedOrder;
             }
         }
         return updatedOrder;
